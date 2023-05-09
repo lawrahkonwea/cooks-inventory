@@ -573,3 +573,208 @@ Started GET "/inventories_index_path" for 127.0.0.1 at 2023-05-09 13:22:59 +0100
   
 ActionController::RoutingError (No route matches [GET] "/inventories_index_path"):
   
+Started GET "/" for 127.0.0.1 at 2023-05-09 14:14:58 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 418)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 14416)
+Completed 200 OK in 43ms (Views: 41.7ms | Allocations: 15050)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:15:29 +0100
+Processing by InventoriesController#index as HTML
+Completed 500 Internal Server Error in 12ms (Allocations: 2730)
+
+
+  
+NameError (uninitialized constant InventoriesController::Inventories
+
+    @inventories = Inventories.created_by_current_user(current_user)
+                   ^^^^^^^^^^^
+Did you mean?  Inventory):
+  
+app/controllers/inventories_controller.rb:3:in `index'
+Started GET "/inventory" for 127.0.0.1 at 2023-05-09 14:15:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/inventory"):
+  
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:16:08 +0100
+Processing by InventoriesController#index as HTML
+Completed 500 Internal Server Error in 7ms (Allocations: 2561)
+
+
+  
+NameError (uninitialized constant InventoriesController::Inventories
+
+    @inventories = Inventories.created_by_current_user(current_user)
+                   ^^^^^^^^^^^
+Did you mean?  Inventory):
+  
+app/controllers/inventories_controller.rb:3:in `index'
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:17:07 +0100
+Processing by InventoriesController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 848)
+
+
+  
+SyntaxError (/home/amaka/Desktop/Microverse/Module-5/Cooks-Corner/app/models/inventory.rb:2: syntax error, unexpected ':', expecting `end'
+    belongs_to: user, foreign_key: 'user_id'
+              ^
+):
+  
+app/models/inventory.rb:2: syntax error, unexpected ':', expecting `end'
+app/models/inventory.rb:2: syntax error, unexpected ':', expecting `end'
+app/models/inventory.rb:2: syntax error, unexpected ':', expecting `end'
+app/controllers/inventories_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2023-05-09 14:44:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (35.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1022)
+  Rendered layout layouts/application.html.erb (Duration: 344.0ms | Allocations: 35365)
+Completed 200 OK in 370ms (Views: 358.6ms | ActiveRecord: 0.0ms | Allocations: 37968)
+
+
+Started GET "/inventory" for 127.0.0.1 at 2023-05-09 14:44:29 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/inventory"):
+  
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:44:41 +0100
+Processing by InventoriesController#index as HTML
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 2908)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+      where(user_id: current_user.id).order(created_at: :desc)
+                                 ^^^):
+  
+app/models/inventory.rb:7:in `created_by_current_user'
+app/controllers/inventories_controller.rb:3:in `index'
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:44:41 +0100
+Processing by InventoriesController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1385)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+      where(user_id: current_user.id).order(created_at: :desc)
+                                 ^^^):
+  
+app/models/inventory.rb:7:in `created_by_current_user'
+app/controllers/inventories_controller.rb:3:in `index'
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:47:36 +0100
+Processing by InventoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (21.9ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" IS NULL ORDER BY "inventories"."created_at" DESC[0m
+  ↳ app/views/inventories/index.html.erb:3
+  Rendered inventories/index.html.erb within layouts/application (Duration: 59.0ms | Allocations: 1245)
+  Rendered layout layouts/application.html.erb (Duration: 163.4ms | Allocations: 15268)
+Completed 200 OK in 273ms (Views: 147.9ms | ActiveRecord: 105.2ms | Allocations: 17989)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:47:52 +0100
+Processing by InventoriesController#index as HTML
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.0ms | Allocations: 6188)
+
+
+  
+NameError (undefined local variable or method `current_user_id' for Inventory:Class
+Did you mean?  current_shard):
+  
+app/models/inventory.rb:7:in `created_by_current_user'
+app/controllers/inventories_controller.rb:3:in `index'
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:48:03 +0100
+Processing by InventoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (0.9ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" IS NULL ORDER BY "inventories"."created_at" DESC[0m
+  ↳ app/views/inventories/index.html.erb:3
+  Rendered inventories/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 708)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 14722)
+Completed 200 OK in 53ms (Views: 39.1ms | ActiveRecord: 3.0ms | Allocations: 17079)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-05-09 14:49:24 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2023-05-09 14:49:32 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 427)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | Allocations: 14325)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms | Allocations: 14972)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-09 14:49:36 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (36.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 176ms (ActiveRecord: 76.3ms | Allocations: 9710)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-09 14:49:36 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 2705)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 3016)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-09 14:49:39 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 2496)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 2762)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-09 14:49:41 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.9ms | Allocations: 1651)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-09 14:49:41 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 291)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 2501)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 2766)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:55:35 +0100
+Processing by InventoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (1.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" IS NULL ORDER BY "inventories"."created_at" DESC[0m
+  ↳ app/views/inventories/index.html.erb:3
+  Rendered inventories/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 762)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 3236)
+Completed 200 OK in 80ms (Views: 20.8ms | ActiveRecord: 19.5ms | Allocations: 8759)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2023-05-09 14:55:37 +0100
+Processing by InventoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (1.7ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" IS NULL ORDER BY "inventories"."created_at" DESC[0m
+  ↳ app/views/inventories/index.html.erb:3
+  Rendered inventories/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 569)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 2778)
+Completed 200 OK in 17ms (Views: 12.1ms | ActiveRecord: 1.7ms | Allocations: 3425)
+
+

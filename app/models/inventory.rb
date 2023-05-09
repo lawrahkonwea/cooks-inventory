@@ -1,3 +1,9 @@
 class Inventory < ApplicationRecord
-    belongs_to: user, foreign_key: 'user_id'
-end
+    belongs_to :user, foreign_key: 'user_id'
+  
+    validates :name, presence: true, length: { maximum: 250 }
+  
+    def self.created_by_current_user(current_user)
+      where(user_id: current_user).order(created_at: :desc)
+    end
+  end
