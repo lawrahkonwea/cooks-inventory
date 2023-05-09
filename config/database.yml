@@ -28,23 +28,23 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username:  amanuelworku
-  password: aman
+  
 development:
   <<: *default
   database: Cooks_Corner_development
-  database: db/development.sqlite3
   host: localhost
   username: postgres
   password: October1996
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: Cooks_Corner_test
+  host: localhost
+  username: postgres
+  password: October1996
 
 production:
   <<: *default
   database: Cooks_Corner_production
   username: Cooks_Corner
   password: <%= ENV["COOKS_CORNER_DATABASE_PASSWORD"] %>
-
