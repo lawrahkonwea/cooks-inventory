@@ -3,8 +3,7 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.created_by_current_user(current_user)
   end
 
-  def show  
-  end
+  def show; end
 
   def new
     @inventory = Inventory.new
