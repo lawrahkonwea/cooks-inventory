@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+    before_action :authenticate_user!, except: [:show]
+  before_action :set_food, only: [:show, :edit, :update, :destroy]
     def new
       @food = Food.new
     end
@@ -38,7 +40,7 @@ class FoodsController < ApplicationController
     end
   
     def food_params
-      params.require(:food).permit(:name, :measurement, :price, :user)
+      params.require(:food).permit(:name, :measurement_unit, :price, :user)
     end
   end
   

@@ -8,6 +8,6 @@ class Food < ApplicationRecord
     attribute :price, :decimal, precision: 4, scale: 2
     validates :price, numericality: { greater_than_or_equal_to: 0 }
     validates :name, presence: true
-    validates :measurement, presence: true
+    validates :measurement_unit, presence: true
   end
   

@@ -4,7 +4,6 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    debugger
     @recipes = current_user.recipes
   end
 
