@@ -25,24 +25,16 @@ class RecipesController < ApplicationController
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user_id = current_user.id
+    @recipe.public_recipe = params[:recipe][:public_recipe] == "1"
   
-    respond_to do |format|
-      if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully created." }
-        format.json { render :show, status: :created, location: @recipe }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
-      end
+    if @recipe.save
+      redirect_to @recipe, notice: 'Recipe was successfully created.'
+    else
+      render :new
     end
   end
   
-  private
-  
-  def recipe_params
-    params.require(:recipe).permit(:title, :description, :user_id, :public_recipe)
-  end
-
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
     respond_to do |format|
@@ -56,21 +48,23 @@ class RecipesController < ApplicationController
     end
   end
 
-  # DELETE /recipes/1 or /recipes/1.json
   def destroy
-    @recipe = current_user.recipes.find(params[:id])
-    @recipe.destroy
-    redirect_to recipes_path, notice: 'Recipe was successfully deleted.'
+    @recipe.delete
+
+    respond_to do |format|
+      format.html { redirect_to recipes_url }
+      format.json { head :no_content }
     end
   end
 
+  # Use callbacks to share common setup or constraints between actions.
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recipe
-      @recipe = Recipe.find(params[:id])
-    end
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def recipe_params
-      params.require(:recipe).permit(:title, :description, :user_id)
-    end
+  # Only allow a list of trusted parameters through.
+  def recipe_params
+    params.require(:recipe).permit(:title, :description, :user_id)
+  end
+end
