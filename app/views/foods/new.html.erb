@@ -1,0 +1,33 @@
+<div class="form">
+  <%= form_with model: @food, url: foods_path, method: :post, local: true, html: {class: "food-form"} do |form| %>
+    <h2 class="head-title">Add New Food</h2>
+
+    <% if @food.errors.any? %>
+      <div class="form__error">
+        <ul>
+          <% @food.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form__group">
+      <%= form.text_field :name, placeholder: "Name", class: "form--input" %>
+    </div>
+
+    <div class="form__group">
+      <%= form.text_field :measurement, placeholder: "Measurement", class: "form--input" %>
+    </div>
+
+    <div class="form__group">
+      <%= form.text_field :price, placeholder: "Unit Price", class: "form--input" %>
+    </div>
+
+    <div class="form__group">
+      <%= form.submit "Add Food", class: "form--submit" %>
+      <%= link_to "Cancel", foods_path, class: "form-cancel-link" %>
+    </div>
+
+  <% end %>
+</div>

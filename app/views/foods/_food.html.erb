@@ -1,0 +1,10 @@
+<div>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= number_to_currency(food.price) %></td>
+          <td>
+          <%= button_to "Delete", food_path(food), class: "delete-link", method: :delete, data: { confirm: "Are you sure about delete #{food.name}?" } %>
+          </td>
+        </tr>
+  </div>
