@@ -4,8 +4,9 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = current_user.recipes
+    @recipes = Recipe.public_recipes.or(current_user.recipes.where(public_recipe: false))
   end
+  
 
   # GET /recipes/1 or /recipes/1.json
   def show
@@ -24,7 +25,7 @@ class RecipesController < ApplicationController
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
-
+  
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully created." }
@@ -34,6 +35,12 @@ class RecipesController < ApplicationController
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  private
+  
+  def recipe_params
+    params.require(:recipe).permit(:title, :description, :user_id, :public_recipe)
   end
 
   # PATCH/PUT /recipes/1 or /recipes/1.json

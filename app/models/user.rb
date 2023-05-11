@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  has_many :recipes, dependent: :destroy
-  validates :email, presence: true
+  has_many :inventories, foreign_key: 'user_id', dependent: :destroy
+  has_many :recipes, foreign_key: 'user_id', dependent: :destroy
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 end
