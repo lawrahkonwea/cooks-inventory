@@ -7,6 +7,6 @@
   <%= link_to "Back to recipes", recipes_path %>
 
   <% if @recipe.user == current_user %>
-    <%= link_to 'Delete', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Remove', (@recipe), data: { turbo_method: 'delete'}, class: "btn btn-outline-danger btn-sm" %>
   <% end %>
 </div>
