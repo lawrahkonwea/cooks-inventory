@@ -33,15 +33,15 @@ development:
   <<: *default
   database: Cooks_Corner_development
   host: localhost
-  username: amanuelworku
-  password: aman
+  username: postgres
+  password: October1996
 
 test:
   <<: *default
   database: Cooks_Corner_test
   host: localhost
-  username: amanuelworku
-  password: aman
+  username: postgres
+  password: October1996
 
 production:
   <<: *default
