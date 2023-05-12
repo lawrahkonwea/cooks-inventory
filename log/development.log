@@ -7316,3 +7316,158 @@ Processing by RecipesController#show as HTML
 Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 1.1ms | Allocations: 6785)
 
 
+Started GET "/inventories" for 127.0.0.1 at 2023-05-12 16:45:04 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Load (0.7ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."user_id" = $1 ORDER BY "inventories"."created_at" DESC[0m  [["user_id", 1]]
+  ↳ app/views/inventories/index.html.erb:3
+  Rendered inventories/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2149)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 667)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 20008)
+Completed 200 OK in 89ms (Views: 40.6ms | ActiveRecord: 28.3ms | Allocations: 28462)
+
+
+Started GET "/foods" for 127.0.0.1 at 2023-05-12 16:45:06 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/foods/index.html.erb:15
+  Rendered foods/_food.html.erb (Duration: 1.9ms | Allocations: 612)
+  Rendered foods/_food.html.erb (Duration: 0.5ms | Allocations: 347)
+  Rendered foods/_food.html.erb (Duration: 0.5ms | Allocations: 347)
+  Rendered foods/_food.html.erb (Duration: 1.3ms | Allocations: 347)
+  Rendered foods/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 6558)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 404)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 9822)
+Completed 200 OK in 47ms (Views: 21.8ms | ActiveRecord: 3.3ms | Allocations: 15490)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-05-12 16:45:07 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/_recipe.html.erb (Duration: 1.1ms | Allocations: 186)
+  Rendered recipes/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4380)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 421)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 7668)
+Completed 200 OK in 36ms (Views: 16.2ms | ActiveRecord: 3.1ms | Allocations: 12259)
+
+
+Started GET "/foods" for 127.0.0.1 at 2023-05-12 16:45:08 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/foods/index.html.erb:15
+  Rendered foods/_food.html.erb (Duration: 0.9ms | Allocations: 376)
+  Rendered foods/_food.html.erb (Duration: 0.7ms | Allocations: 347)
+  Rendered foods/_food.html.erb (Duration: 1.0ms | Allocations: 347)
+  Rendered foods/_food.html.erb (Duration: 0.6ms | Allocations: 347)
+  Rendered foods/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2463)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 386)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 5507)
+Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 0.9ms | Allocations: 7380)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2023-05-12 16:45:09 +0300
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:39:in `set_food'
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 14.8ms | Allocations: 8025)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "inventory_foods" does not exist
+LINE 9:  WHERE a.attrelid = '"inventory_foods"'::regclass
+                            ^
+):
+  
+app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3017081657821595910)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInventoryFoods (20230512134852)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.8ms)[0m  [1m[35mCREATE TABLE "inventory_foods" ("id" bigserial primary key, "food_id" bigint NOT NULL, "quantity" integer DEFAULT 0, "value" decimal(10,2) DEFAULT 0.0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_bac85223fc"
+FOREIGN KEY ("food_id")
+  REFERENCES "foods" ("id")
+)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_inventory_foods_on_food_id" ON "inventory_foods" ("food_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230512134852"]]
+  [1m[36mTRANSACTION (16.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3017081657821595910)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/foods" for 127.0.0.1 at 2023-05-12 16:49:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/foods/index.html.erb:15
+  Rendered foods/_food.html.erb (Duration: 14.2ms | Allocations: 452)
+  Rendered foods/_food.html.erb (Duration: 0.7ms | Allocations: 347)
+  Rendered foods/_food.html.erb (Duration: 0.5ms | Allocations: 347)
+  Rendered foods/_food.html.erb (Duration: 0.5ms | Allocations: 347)
+  Rendered foods/index.html.erb within layouts/application (Duration: 27.9ms | Allocations: 6124)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 407)
+  Rendered layout layouts/application.html.erb (Duration: 56.3ms | Allocations: 23418)
+Completed 200 OK in 95ms (Views: 54.4ms | ActiveRecord: 16.3ms | Allocations: 33182)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2023-05-12 16:49:30 +0300
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (16.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:39:in `set_food'
+  [1m[36mFood Load (1.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[36mInventoryFood Update All (1.2ms)[0m  [1m[33mUPDATE "inventory_foods" SET "food_id" = $1 WHERE "inventory_foods"."food_id" = $2[0m  [["food_id", nil], ["food_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[36mRecipeFood Load (0.8ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."food_id" = $1[0m  [["food_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[36mRecipeFood Destroy (2.7ms)[0m  [1m[31mDELETE FROM "recipe_foods" WHERE "recipe_foods"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[36mFood Destroy (2.6ms)[0m  [1m[31mDELETE FROM "foods" WHERE "foods"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (21.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+Redirected to http://127.0.0.1:3000/foods
+Completed 302 Found in 128ms (ActiveRecord: 82.6ms | Allocations: 14484)
+
+
+Started GET "/foods" for 127.0.0.1 at 2023-05-12 16:49:31 +0300
+Processing by FoodsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/foods/index.html.erb:15
+  Rendered foods/_food.html.erb (Duration: 0.8ms | Allocations: 397)
+  Rendered foods/_food.html.erb (Duration: 0.7ms | Allocations: 347)
+  Rendered foods/_food.html.erb (Duration: 0.7ms | Allocations: 347)
+  Rendered foods/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2123)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 386)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5273)
+Completed 200 OK in 26ms (Views: 11.6ms | ActiveRecord: 0.6ms | Allocations: 7238)
+
+
