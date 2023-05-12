@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :inventories, only: [:index, :show, :create, :destroy]
   resources :recipes
   resources :foods
+  resources :public_recipes
   # Defines the root path route ("/")
   root 'public_recipes#index'
 end
