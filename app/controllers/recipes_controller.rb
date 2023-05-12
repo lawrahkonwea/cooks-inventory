@@ -4,12 +4,13 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.public_recipes.or(current_user.recipes.where(public_recipe: false))
+    @recipes = current_user.recipes
   end
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    @recipe = current_user.recipes.find(params[:id])
+    @recipe = Recipe.find_by_id(params[:id])
+    @current_user = current_user
   end
 
   # GET /recipes/new
@@ -47,11 +48,15 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe.delete
-
-    respond_to do |format|
-      format.html { redirect_to recipes_url }
-      format.json { head :no_content }
+    def destroy
+      @recipe = Recipe.find(params[:id])
+      RecipeFood.where(recipe_id: @recipe.id).destroy_all
+      @recipe.destroy
+    
+      respond_to do |format|
+        format.html { redirect_to recipes_url }
+        format.json { head :no_content }
+      end
     end
   end
 
