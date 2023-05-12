@@ -6,7 +6,7 @@ class RecipeFoodsController < ApplicationController
       @available_food = @user.foods
       @recipe_food = RecipeFood.new
     end
-  
+ 
     def create
       @recipe = Recipe.find_by_id(params[:recipe_id])
       @recipe_food = RecipeFood.new(recipe_food_params.merge(recipe_id: @recipe.id))
