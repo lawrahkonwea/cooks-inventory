@@ -1,0 +1,28 @@
+<section class="recipes public">
+  <% if @recipes.empty? %>
+    <p class="empty-recipes">No public recipes.</p>
+  <% else %>
+    <% @recipes.each do |recipe| %>
+      <div class="recipe-item">
+        <div class="recipe-desc slow">
+          <div class="foodownercombo">
+          <h4 class="link"><%= link_to recipe.title, recipe_path(recipe) %></h4>
+          <p class="usernames">By: <%= recipe.description %></p>
+          <p class="usernames">By: <%= recipe.user.email %></p>
+          </div>
+          <%
+=begin%>
+ <div class="totalsss">
+          <p class="totalfood"> Total food items: <%= recipe.all_food_items %></p>
+          <p class="totalfood">Total price: <%= number_to_currency(recipe.total_price) %></p>
+          </div> 
+<%
+=end%>
+        </div>
+        <div class="recipe-title-delete">
+          <h4 class="link"></h4>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</section>
