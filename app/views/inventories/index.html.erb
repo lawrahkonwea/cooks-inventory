@@ -3,7 +3,6 @@
   <% @inventories.each do |inventory| %>
     <li>
       <%= link_to inventory.name, inventory_path(inventory) %>
-      <%= inventory.description %>
     </li>
   <% end %>
 </ul>
