@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :recipes
   resources :foods
   # Defines the root path route ("/")
-  root 'users#index'
+  root 'public_recipes#index'
 end

@@ -57,6 +57,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def public_recipe
+    @recipes = Recpe.where(public_recipe: true)
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   private
   def set_recipe
@@ -65,6 +69,6 @@ class RecipesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :user_id)
+    params.require(:recipe).permit(:title, :description, :user_id, :public_recipe)
   end
 end

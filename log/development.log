@@ -852,3 +852,33 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 140ms (Views: 37.1ms | ActiveRecord: 10.9ms | Allocations: 25832)
 
 
+Started GET "/users/sign_in" for ::1 at 2023-05-12 07:34:38 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 625)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2299)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 19248)
+Completed 200 OK in 148ms (Views: 32.3ms | ActiveRecord: 12.2ms | Allocations: 27116)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-05-12 07:34:42 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"new@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "new@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 305ms (ActiveRecord: 1.2ms | Allocations: 3583)
+
+
+Started GET "/" for ::1 at 2023-05-12 07:34:42 +0300
+Processing by PublicRecipesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering public_recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" WHERE "recipes"."public_recipe" = $1 LIMIT $2[0m  [["public_recipe", true], ["LIMIT", 1]]
+  ↳ app/views/public_recipes/index.html.erb:2
+  Rendered public_recipes/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1078)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3952)
+Completed 200 OK in 30ms (Views: 8.9ms | ActiveRecord: 1.9ms | Allocations: 8586)
+
+
