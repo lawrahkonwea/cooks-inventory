@@ -49,7 +49,6 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    def destroy
       @recipe = Recipe.find(params[:id])
       RecipeFood.where(recipe_id: @recipe.id).destroy_all
       @recipe.destroy
@@ -57,7 +56,6 @@ class RecipesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to recipes_url }
         format.json { head :no_content }
-      end
     end
   end
 
