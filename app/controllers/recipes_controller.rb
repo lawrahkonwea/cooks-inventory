@@ -56,7 +56,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipe
-    @recipes = Recpe.where(public_recipe: true)
+    @recipes = Recipe.where(public_recipe: true)
   end
 
   # Use callbacks to share common setup or constraints between actions.
