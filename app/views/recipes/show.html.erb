@@ -15,7 +15,7 @@
     <%= render partial: 'recipe2', locals: { recipe: @recipe } %>
     <div id="recipe_buttons" class="recipe_buttons">
       <% if user_signed_in? %>
-        <button type="button" id="open_button" class="open_button">Generate Shopping List</button>
+        <button type="" class="open_button">Generate Shopping List</button>
       <% end %>
     
       <% if @recipe.user == @current_user %>
@@ -66,31 +66,21 @@
 </div> 
 
 <script>
- const test = document.querySelector(".open-button")
-const modal = document.querySelector(".modal")
-document.addEventListener("DOMContentLoaded", () => {
-  test.addEventListener("click", (e) => {
-    e.preventDefault()
-    console.log("name")
-    if (modal.style.display === "none") {
-      modal.style.display = "block"
-    } else {
-      modal.style.display = "none"
-    }
-  })
-})
+const openButton = document.querySelector(".open_button"); // Updated selector
 
-      document.addEventListener("DOMContentLoaded", () => {
-        test.addEventListener("click", (e) => {
-          e.preventDefault()
-          console.log("name")
-          if (modal.classList.contains("modal")) {
-            modal.classList.remove("modal")
-          } else {
-            modal.classList.add("modal")
-          }
-        })
-      })
+document.addEventListener("DOMContentLoaded", () => {
+  openButton.addEventListener("click", (e) => { // Updated event listener
+    e.preventDefault();
+    const modal = document.getElementById("modal"); // Updated selector
+
+    if (modal.style.display === "none") {
+      modal.style.display = "block";
+    } else {
+      modal.style.display = "none";
+    }
+  });
+});
+
     </script>
   </body>
 </html>
