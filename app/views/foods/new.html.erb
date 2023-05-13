@@ -1,5 +1,5 @@
 <div class="form">
-  <%= form_with model: @food, url: foods_path, method: :post, local: true, html: {class: "food-form"} do |form| %>
+  <%= form_with(model: @food, url: foods_path, method: :post, scope: :food) do |form| %>
     <h2 class="head-title">Add New Food</h2>
 
     <% if @food.errors.any? %>
@@ -17,11 +17,11 @@
     </div>
 
     <div class="form__group">
-      <%= form.text_field :measurement, placeholder: "Measurement", class: "form--input" %>
+      <%= form.text_field :measurement_unit, placeholder: "Measurement", class: "form--input" %>
     </div>
 
     <div class="form__group">
-      <%= form.text_field :price, placeholder: "Unit Price", class: "form--input" %>
+      <%= form.number_field :price, placeholder: "Unit Price", class: "form--input" %>
     </div>
 
     <div class="form__group">

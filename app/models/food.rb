@@ -1,8 +1,8 @@
 class Food < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, class_name: 'User'
   has_many :inventory_foods
   has_many :inventory, through: :inventory_foods
-  has_many :recipe_foods, dependent: :destroy
+  # has_many :recipe_foods, dependent: :destroy
   has_many :recipes, through: :recipe_foods
 
   attribute :price, :decimal, precision: 4, scale: 2
