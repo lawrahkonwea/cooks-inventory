@@ -1,15 +1,287 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+#public-header {
+  text-align: center;
+  font-size: 500%;
+  font-weight: 900;
+}
+
+.recipes {
+  background-color: gray;
+  padding: 2%;
+}
+
+.recipe-item {
+  display: grid;
+  place-items: center;
+  background-color: rgb(189, 189, 189);
+  border-radius: 8px;
+  margin: 2%;
+}
+
+.recipe-desc {
+  width: 95%;
+  padding: 2% 0 2% 10%;
+}
+
+.block1 {
+  float: left;
+  width: 50%;
+}
+
+.block2 {
+  padding-left: 45%;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.link {
+  font-size: 400%;
+  font-weight: bolder;
+}
+
+.link a {
+  text-decoration: none;
+  color: black;
+}
+
+.usernames {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+#my-recipes {
+  background-color: gray;
+}
+
+.recipe_title {
+  margin-right: 1%;
+  width: 80%;
+}
+
+.recipe_title a {
+  font-size: 400%;
+  font-weight: bolder;
+  text-decoration: none;
+  color: black;
+}
+
+.remove {
+  width: 40%;
+}
+
+.remove a {
+  font-size: 250%;
+  font-weight: bold;
+  color: black;
+}
+
+.recipe_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  place-items: left;
+  background-color: rgb(189, 189, 189);
+  border-radius: 8px;
+  margin: 2%;
+  padding: 2% 0 2% 10%;
+}
+
+#recipes-header {
+  text-align: center;
+  font-size: 500%;
+  font-weight: 900;
+}
+
+.recipe_description {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+#new-recipe-section {
+  background-color: gray;
+}
+
+.new-recipe {
+  font-size: 200%;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: 12%;
+}
+
+.new-recipe-header {
+  text-align: center;
+  font-size: 500%;
+  font-weight: 900;
+}
+
+#recipe_form {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.form_group {
+  text-align: center;
+  border-radius: 8px;
+  margin: 1%;
+  width: 50%;
+}
+
+.form_group textarea, input {
+  width: 100%;
+  border-radius: 8px;
+  background-color: rgb(189, 189, 189);
+  border: none;
+  height: 50px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.form_check_input::before {
+  border-radius: 80px;
+}
+
+.recipe_links {
+  text-align: center;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.recipe_links a {
+  color: black;
+  text-decoration: none;
+}
+
+.recipe_title2 {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 400%;
+  font-weight: bold;
+}
+
+.recipe_title2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.recipe_description2 {
+  border-left: 1px solid #ccc;
+  padding-left: 5%;
+  font-size: 200%;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#recipe_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 0 5%;
+  padding-bottom: 1%;
+  border-bottom: solid 2px gray;
+  width: 90%;
+}
+
+.view_recipe {
+  background-color: gray;
+  padding: 5% 2% 15% 2%;
+}
+  
+.open_button {
+  margin-left: 2%;
+  font-size: 200%;
+  font-weight: bold;
+  background-color: rgb(189, 189, 189);
+  border-radius: 8px;
+  border: none;
+  padding: 1%;
+}
+
+.add_ingredients_link {
+  margin-right: 2%;
+  font-size: 200%;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(189, 189, 189);
+  border-radius: 8px;
+  padding: 1%;
+}
+
+.hr-line {
+  border: 0;
+  height: 1px;
+  background: black;
+  width: 80%;
+  margin: 20px auto;
+}
+  
+.recipe_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+  
+.recipe_table_head {
+  background-color: #f2f2f2;
+}
+  
+.recipe_table_row {
+  border-bottom: 1px solid #ddd;
+}
+  
+.recipe_table_header,
+  .recipe_table_cell {
+  text-align: left;
+  padding: 8px;
+}
+  
+.recipe_table_actions {
+  display: flex;
+  justify-content: center;
+}
+  
+.recipe_table_button {
+  margin: 0 5px;
+}
+  
+.recipe_links {
+  text-align: center;
+  margin-top: 20px;
+}
+  
+.edit_recipe_link {
+  margin-right: 10px;
+}
+
+.recipe_container2 {
+  background-color: rgb(189, 189, 189);
+  border-radius: 8px;
+  margin: 5%;
+}
+
+.recipe_food_row {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.display {
+  background-color: rgb(189, 189, 189);
+  border-radius: 8px;
+  margin: 5%;
+}
