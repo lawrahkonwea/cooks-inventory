@@ -465,3 +465,72 @@ Processing by FoodsController#index as TURBO_STREAM
 Completed 200 OK in 22ms (Views: 11.7ms | ActiveRecord: 0.7ms | Allocations: 7803)
 
 
+Started GET "/foods" for 127.0.0.1 at 2023-05-10 21:41:14 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/foods"):
+  
+Started GET "/foods" for 127.0.0.1 at 2023-05-10 21:41:38 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.2ms | Allocations: 7213)
+
+
+  
+NoMethodError (undefined method `foods' for nil:NilClass
+
+      @foods = current_user.foods
+                           ^^^^^^):
+  
+app/controllers/foods_controller.rb:7:in `index'
+Started GET "/foods" for 127.0.0.1 at 2023-05-10 21:43:26 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 19.1ms | Allocations: 7168)
+
+
+  
+NoMethodError (undefined method `foods' for nil:NilClass
+
+      @foods = current_user.foods
+                           ^^^^^^):
+  
+app/controllers/foods_controller.rb:9:in `index'
+Started GET "/foods" for 127.0.0.1 at 2023-05-10 21:43:29 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 2570)
+
+
+  
+NoMethodError (undefined method `foods' for nil:NilClass
+
+      @foods = current_user.foods
+                           ^^^^^^):
+  
+app/controllers/foods_controller.rb:9:in `index'
+Started GET "/foods" for 127.0.0.1 at 2023-05-10 21:52:51 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 6.2ms | Allocations: 9915)
+
+
+  
+NoMethodError (undefined method `foods' for nil:NilClass
+
+      @foods = current_user.foods
+                           ^^^^^^):
+  
+app/controllers/foods_controller.rb:9:in `index'
+Started GET "/foods" for 127.0.0.1 at 2023-05-10 21:52:54 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2570)
+
+
+  
+NoMethodError (undefined method `foods' for nil:NilClass
+
+      @foods = current_user.foods
+                           ^^^^^^):
+  
+app/controllers/foods_controller.rb:9:in `index'
