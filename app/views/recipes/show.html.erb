@@ -46,6 +46,7 @@
   <%= link_to 'Remove', (@recipe), data: { turbo_method: 'delete'}, class: "btn btn-outline-danger btn-sm" %>
   <% end %>
 </div>
+
   <% if user_signed_in? %>
     <div class="modal" id="modal">
  <%= form_with url: shopping_list_path, method: :get, local: true, html: { "data-turbo": "false", class: "modal-form" } do |form| %>
@@ -66,19 +67,19 @@
 </div> 
 
 <script>
-  const test = document.querySelector(".open-button")
+ const test = document.querySelector(".open-button")
 const modal = document.querySelector(".modal")
 document.addEventListener("DOMContentLoaded", () => {
-    test.addEventListener("click", (e) => {
-      e.preventDefault()
-      console.log("name")
-      if (modal.classList.contains("modal")) {
-        modal.classList.remove("modal")
-      } else {
-        modal.classList.add("modal")
-      }
-    })
+  test.addEventListener("click", (e) => {
+    e.preventDefault()
+    console.log("name")
+    if (modal.style.display === "none") {
+      modal.style.display = "block"
+    } else {
+      modal.style.display = "none"
+    }
   })
+})
 
 </script>
   </body>
