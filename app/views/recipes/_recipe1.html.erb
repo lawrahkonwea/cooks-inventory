@@ -1,0 +1,12 @@
+<div id="<%= dom_id recipe %>" class="recipe_container">
+  <div class="block1">
+    <h4 class="recipe_title">
+      <%= link_to recipe.title, recipe %>
+    </h4>
+    <p class="remove"><%= link_to "Remove", recipe %></p>
+  </div>
+    <p class="recipe_description">
+      <%= recipe.description %>
+    </p>
+
+</div>

@@ -1,9 +1,10 @@
-<h1>New recipe</h1>
-
+<section id="new-recipe-section">
+<h1 class="new-recipe-header">New recipe</h1>
 <%= render "form", recipe: @recipe %>
 
 <br>
 
-<div>
-  <%= link_to "Back to recipes", recipes_path %>
+<div class="recipe_links">
+  <%= link_to "Back to recipes", recipes_path, class: "recipe_back_link" %>
 </div>
+</section>

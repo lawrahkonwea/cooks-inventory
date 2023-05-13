@@ -6,11 +6,12 @@
       <div class="recipe-item">
         <div class="recipe-desc slow">
           <div class="foodownercombo">
+          <div class="block1">
           <h4 class="link"><%= link_to recipe.title, recipe_path(recipe) %></h4>
-          <p class="usernames">By: <%= recipe.description %></p>
           <p class="usernames">By: <%= recipe.user.email %></p>
           </div>
-        <div class="totalsss">
+          </div>
+        <div class="block2">
           <p class="totalfood"> Total food items: <%= recipe.all_food_items %></p>
           <p class="totalfood">Total price: <%= number_to_currency(recipe.total_price) %></p>
           </div> 
