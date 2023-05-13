@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get '/inventories', to: 'inventories#index', as: 'inventories'
-  get '/inventories/:id', to: 'inventories#show', as: 'inventory'
-
-  resources :inventories, only: [:index, :show, :create, :destroy]
-
+ 
+  resources :inventories, only: [:index, :show, :destroy, :new, :create] do
+    get 'foods/new', to: 'inventory_foods#new'
+    post 'foods', to: 'inventory_foods#create'
+    delete 'foods/:id', to: 'inventory_foods#destroy', as: 'food'
+  end
   resources :recipes do
     resources :recipe_foods, path: 'food', only: [:destroy, :new, :create]
   end
