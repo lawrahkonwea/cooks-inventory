@@ -6,6 +6,63 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.modal {
+  display: none;
+}
+
+.open-button {
+  cursor: pointer;
+}
+
+#modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-form {
+  width: 500px;
+  margin: auto;
+}
+
+.shopping-list {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  background-color: white;
+  padding: 3.125em;
+  border-radius: 10px;
+  margin: auto;
+  border-color: #0d1c21;
+}
+
+.public {
+  color: #206e82;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.slow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.usernames,
+.totalfood {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+
 #public-header {
   text-align: center;
   font-size: 500%;
@@ -73,13 +130,7 @@
 }
 
 .remove {
-  width: 60%;
-  font-size: 150%;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 1%;
-  background-color: gray;
+  width: 40%;
 }
 
 .remove a {
@@ -92,7 +143,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  place-items: left;
   background-color: rgb(189, 189, 189);
   border-radius: 8px;
   margin: 2%;
@@ -143,7 +193,8 @@
   width: 50%;
 }
 
-.form_group textarea, input {
+.form_group textarea,
+input {
   width: 100%;
   border-radius: 8px;
   background-color: rgb(189, 189, 189);
@@ -161,6 +212,7 @@
   text-align: center;
   font-size: 200%;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 .recipe_links a {
@@ -207,7 +259,7 @@ ul {
   background-color: gray;
   padding: 5% 2% 15% 2%;
 }
-  
+
 .open_button {
   margin-left: 2%;
   font-size: 200%;
@@ -236,41 +288,36 @@ ul {
   width: 80%;
   margin: 20px auto;
 }
-  
+
 .recipe_table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
-  
+
 .recipe_table_head {
   background-color: #f2f2f2;
 }
-  
+
 .recipe_table_row {
   border-bottom: 1px solid #ddd;
 }
-  
+
 .recipe_table_header,
-  .recipe_table_cell {
+.recipe_table_cell {
   text-align: left;
   padding: 8px;
 }
-  
+
 .recipe_table_actions {
   display: flex;
   justify-content: center;
 }
-  
+
 .recipe_table_button {
   margin: 0 5px;
 }
-  
-.recipe_links {
-  text-align: center;
-  margin-top: 20px;
-}
-  
+
 .edit_recipe_link {
   margin-right: 10px;
 }
@@ -290,8 +337,4 @@ ul {
   background-color: rgb(189, 189, 189);
   border-radius: 8px;
   margin: 5%;
-}
-
-.Modify {
-
 }
