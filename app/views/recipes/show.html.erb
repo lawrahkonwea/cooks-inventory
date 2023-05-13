@@ -66,20 +66,19 @@
 </div> 
 
 <script>
-const openButton = document.querySelector(".open_button"); // Updated selector
-
+ const test = document.querySelector(".open_button")
+const modal = document.querySelector(".modal")
 document.addEventListener("DOMContentLoaded", () => {
-  openButton.addEventListener("click", (e) => { // Updated event listener
-    e.preventDefault();
-    const modal = document.getElementById("modal"); // Updated selector
-
-    if (modal.style.display === "none") {
-      modal.style.display = "block";
-    } else {
-      modal.style.display = "none";
-    }
-  });
-});
+    test.addEventListener("click", (e) => {
+      e.preventDefault()
+      console.log("name")
+      if (modal.classList.contains("modal")) {
+        modal.classList.remove("modal")
+      } else {
+        modal.classList.add("modal")
+      }
+    })
+  })
 
     </script>
   </body>
