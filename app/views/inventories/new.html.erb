@@ -1,0 +1,12 @@
+<div class="container">
+
+<%= form_with model: @inventory, url: inventories_path, method: :post, local: true, scope: :inventory do |form| %>
+  <h1 class="">Add Inventory</h1>
+  <div>
+    <div>
+      <%= form.text_field :name, placeholder: 'Name', class: ""  %>
+    </div>
+      <%= form.submit "Add Inventory", class: "" %>
+  </div>
+<% end %>
+</div>

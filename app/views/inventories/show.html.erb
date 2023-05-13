@@ -1,2 +1,40 @@
-<h1>Inventories#show</h1>
-<p>Find me in app/views/inventories/show.html.erb</p>
+<div class="inventory-table">
+  <header class="inventory-header">
+    <h1 class="inventory-title">
+      <%= @inventory.name %>
+    </h1>
+    <%=
+      link_to "Add food", new_food_path(@inventory.id),
+      class: "add-food"
+    %>
+  </header>
+  <div class="table-container">
+    <table class="striped-table">
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @inventory.inventory_foods.each do |item| %>
+          <tr>
+            <td>
+              <%= item.food.name %>
+            </td>
+            <td>
+              <%= "#{item.quantity} #{item.food.measurement}" %>
+            </td>
+            <td>
+              <%=
+                button_to "Delete", inventory_food_path(@inventory.id, item.id), method: :delete,
+                class: "delete-button"
+              %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
