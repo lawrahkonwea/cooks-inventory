@@ -1,0 +1,40 @@
+<div class="page-container">
+  <div class="page-header">
+    <h1 class="page-title">Shopping List</h1>
+  </div>
+  <div class="page-summary">
+    <div class="summary-item">
+      Amount of food to buy: <%= @shopping_list.length %> items
+      Total value of food needed: <%= number_to_currency( @shopping_list.map { |item| item[:price]}.sum ) %>
+    </div>
+    <div class="summary-item">
+      Recipe: <%= link_to @recipe.name, recipe_path(@recipe.id), class: "page-link" %><br>
+      Inventory: <%= link_to @inventory.name, inventory_path(@inventory.id), class: "page-link" %>
+    </div>
+  </div>
+  <div class="page-content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= link_to "Food", :sort => "food", class: "table-header" %></th>
+          <th><%= link_to "Quantity", :sort => "quantity", class: "table-header" %></th>
+          <th><%= link_to "Price", :sort => "price", class: "table-header" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @shopping_list.each do |food| %>
+          <tr>
+            <td><%= food[:name] %></td>
+            <td><%= food[:quantity] %></td>
+            <td><%= number_to_currency(food[:price]) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= type %>">
+      <%= msg %>
+    </div>
+  <% end %>
+</div>

@@ -10,14 +10,10 @@
           <p class="usernames">By: <%= recipe.description %></p>
           <p class="usernames">By: <%= recipe.user.email %></p>
           </div>
-          <%
-=begin%>
- <div class="totalsss">
+        <div class="totalsss">
           <p class="totalfood"> Total food items: <%= recipe.all_food_items %></p>
           <p class="totalfood">Total price: <%= number_to_currency(recipe.total_price) %></p>
           </div> 
-<%
-=end%>
         </div>
         <div class="recipe-title-delete">
           <h4 class="link"></h4>

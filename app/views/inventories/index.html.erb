@@ -1,8 +1,13 @@
-<h1>My Inventories</h1>
-<ul>
-  <% @inventories.each do |inventory| %>
-    <li>
-      <%= link_to inventory.name, inventory_path(inventory) %>
-    </li>
-  <% end %>
-</ul>
+<h1 class="">My Inventories</h1>
+<div class="">
+  <%= link_to "New Inventory", new_inventory_path, class: "add-inventories" %>
+  <div class="">
+    <% @inventories.each do |inventory| %>
+      <%= render inventory %>
+      <div class="">
+        <%= link_to "Show this inventory", inventory, class: "action" %>
+      </div>
+                <%= button_to "Remove", inventory, method: :delete, data: { confirm: "Are you sure?" }, class: "actions" %>
+    <% end %>
+  </div>
+</div>

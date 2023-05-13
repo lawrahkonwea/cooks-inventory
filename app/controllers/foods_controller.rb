@@ -1,20 +1,21 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :set_food, only: %i[show edit update destroy]
+  # before_action :set_food, only: %i[show edit update destroy]
   def new
+    # @user = current_user
     @food = Food.new
   end
 
   def index
-    @foods = current_user.foods
+    @foods = Food.all
   end
 
-  def show
-    # ...
-  end
+  def show; end
 
   def create
-    @food = current_user.foods.new(food_params)
+    # @user = current_user
+    @food = Food.new(food_params)
+    @food.user_id = current_user.id
     if @food.save
       redirect_to foods_path
     else
@@ -23,13 +24,9 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food = current_user.foods.find(params[:id])
-
-    if @food.destroy
-      flash[:success] = 'Food was successfully deleted.'
-    else
-      flash[:error] = 'Failed to delete food.'
-    end
+    @food = Food.find(params[:id])
+    @food.destroy
+    flash[:success] = 'Food was successfully deleted.'
     redirect_to foods_path
   end
 
@@ -40,6 +37,6 @@ class FoodsController < ApplicationController
   end
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :user)
+    params.require(:food).permit(:name, :measurement_unit, :price)
   end
 end
