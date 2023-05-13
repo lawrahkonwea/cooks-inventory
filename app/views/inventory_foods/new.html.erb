@@ -1,0 +1,21 @@
+<div class="form-container">
+  <h1 class="form-header">New Inventory Item</h1>
+  <%= form_with model: @inventory_food, url: inventory_foods_path(@inventory.id), local: true, html: { "data-turbo": "false" } do |form| %>
+    <% if @inventory_food.errors.any? %>
+      <div class="form-errors">
+        <% @inventory_food.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="form-fields">
+      <div class="form-group">
+        <%= form.number_field :quantity, placeholder: "Quantity", class: "form-input" %>
+      </div>
+      <div class="form-group">
+        <%= form.select :food_id, options_from_collection_for_select(@available_food, "id", "name"), { prompt: "Select food" }, { class: "form-input" } %>
+      </div>
+      <%= form.submit "Submit", class: "form-submit" %>
+    </div>
+  <% end %>
+</div>
