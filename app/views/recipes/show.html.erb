@@ -41,9 +41,6 @@
       </tbody>
     </table>
 
-  <% if @recipe.user == current_user %>
-  <%= link_to 'Remove', (@recipe), data: { turbo_method: 'delete'}, class: "btn btn-outline-danger btn-sm" %>
-  <% end %>
 </div>
 
   <% if user_signed_in? %>

@@ -1,6 +1,6 @@
 class InventoriesController < ApplicationController
   helper_method :new_inventory_path
-  
+
   before_action :authenticate_user!
 
   before_action :set_inventory, only: %i[show edit update destroy]

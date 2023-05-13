@@ -3,7 +3,7 @@
     <h4 class="recipe_title">
       <%= link_to recipe.title, recipe %>
     </h4>
-    <p class="remove"><%= link_to "Remove", recipe %></p>
+    <p><%= button_to "Delete recipe", recipe_path(recipe), class: "remove", method: :delete, data: { confirm: "Are you sure you want to delete this recipe?" } %></p>
   </div>
     <p class="recipe_description">
       <%= recipe.description %>

@@ -22,6 +22,14 @@
   font-family: 'Raleway', sans-serif;
 }
 
+body {
+  background-color: gray;
+}
+
+a {
+  color: black;
+}
+
 .modal {
   display: none;
 }
@@ -86,7 +94,6 @@
 }
 
 .recipes {
-  background-color: gray;
   padding: 2%;
 }
 
@@ -100,7 +107,7 @@
 
 .recipe-desc {
   width: 95%;
-  padding: 2% 0 2% 10%;
+  padding: 2% 0 2% 2%;
 }
 
 .block1 {
@@ -109,7 +116,7 @@
 }
 
 .block2 {
-  padding-left: 45%;
+  padding-left: 30%;
   font-size: 200%;
   font-weight: bold;
 }
@@ -185,7 +192,10 @@
   color: black;
   text-decoration: none;
   font-weight: bold;
-  padding-left: 12%;
+  margin-left: 12%;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px 10px;
 }
 
 .new-recipe-header {
@@ -353,4 +363,497 @@ ul {
   background-color: rgb(189, 189, 189);
   border-radius: 8px;
   margin: 5%;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+  padding: 30px 10px;
+  background-color: #2d545e;
+}
+
+.btn {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  color: #61aec1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: white;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn:hover::before {
+  width: 160%;
+}
+
+.food-container {
+  padding: 20px;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.striped-table td,
+.striped-table th {
+  padding: 10px;
+  text-align: left;
+}
+
+.food-table {
+  width: 60%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.food-table th,
+.food-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.food-table th {
+  background-color: #f2f2f2;
+}
+
+.food-table td:last-child {
+  text-align: center;
+}
+
+.add-food {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.new-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.head-title {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.form__error {
+  color: #f00;
+  margin-bottom: 10px;
+}
+
+.form__group {
+  margin-bottom: 20px;
+}
+
+.form--input {
+  display: block;
+  width: 96%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.form--submit {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form--submit:hover {
+  background-color: #555;
+}
+
+.form-cancel-link {
+  color: #777;
+  text-decoration: underline;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.inventories-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.add-inventory-link {
+  display: block;
+  margin-bottom: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-inventory-link:hover {
+  background-color: #555;
+}
+
+.inventories-list {
+  margin-top: 20px;
+}
+
+.inventory-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.inventory-action-link {
+  color: #333;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.inventory-action-button {
+  background-color: #f00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.inventory-action-button:hover {
+  background-color: #c00;
+}
+
+.form-title {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.form-errors {
+  color: #f00;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-submit {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: #555;
+}
+
+.inventory-table {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inventory-title {
+  font-size: 24px;
+}
+
+.add-food-button {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-food-button:hover {
+  background-color: #555;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.striped-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.striped-table th {
+  background-color: #eee;
+}
+
+.striped-table tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+.delete-food-button {
+  background-color: #f00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete-food-button:hover {
+  background-color: #c00;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.inventory-food {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.page-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 20px;
+}
+
+.page-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  font-size: 16px;
+}
+
+.page-link {
+  color: #333;
+}
+
+.page-link:hover {
+  text-decoration: underline;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: #eee;
+}
+
+.table-header {
+  color: #333;
+  text-decoration: none;
+}
+
+.table-header:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.login-input {
+  display: block;
+  width: 96%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.remember-me {
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.remember-me-label {
+  margin-left: 10px;
+}
+
+.login-submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-submit:hover {
+  background-color: #555;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.links a {
+  color: #333;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.signup-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.signup-input {
+  display: block;
+  width: 96%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.signup-submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup-submit:hover {
+  background-color: #555;
 }
