@@ -9,38 +9,37 @@
   </head>
   <body>
 
-<p style="color: green"><%= notice %></p>
-
-<%= render @recipe %>
-  <div class="recipe-buttons">
-    <% if user_signed_in? %>
-      <button type="" class="open-button">Generate Shopping List</button>
-    <% end %>
-
-    <% if @recipe.user == @current_user %>
-      <%= link_to "Add Ingredients", new_recipe_recipe_food_path(@recipe.id), class: ""%>
-    <% end %>
-  </div>
- <table class="recipe-table">
-    <thead class="">
-      <tr class="">
-        <th class="">Food</th>
-        <th class="">Quantity</th>
-        <th class="">Value</th>
-        <% if @recipe.user == current_user %>
-          <th class="">Action</th>
+    <p class="notice" style="color: green"><%= notice %></p>
+    <section class="view_recipe">
+    <div class="display">
+    <%= render partial: 'recipe2', locals: { recipe: @recipe } %>
+    <div id="recipe_buttons" class="recipe_buttons">
+      <% if user_signed_in? %>
+        <button type="button" id="open_button" class="open_button">Generate Shopping List</button>
+      <% end %>
+    
+      <% if @recipe.user == @current_user %>
+        <%= link_to "Add Ingredients", new_recipe_recipe_food_path(@recipe.id), class: "add_ingredients_link"%>
+      <% end %>
+    </div>
+    
+    <table id="recipe_table" class="recipe_table">
+      <thead class="recipe_table_head">
+        <tr class="recipe_table_row">
+          <th class="recipe_table_header">Food</th>
+          <th class="recipe_table_header">Quantity</th>
+          <th class="recipe_table_header">Value</th>
+          <% if @recipe.user == current_user %>
+            <th class="recipe_table_header">Action</th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe_foods.each do |recipe_food| %>
+          <%= render partial: "recipe_food", locals: { recipe_food: recipe_food } %>
         <% end %>
-      </tr>
-    </thead>
-    <tbody>
-      <% @recipe_foods.each do |recipe_food| %>
-  <%= render partial: "recipe_food", locals: { recipe_food: recipe_food } %>
-<% end %>
-    </tbody>
-  </table>
-<div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
+      </tbody>
+    </table>
 
   <% if @recipe.user == current_user %>
   <%= link_to 'Remove', (@recipe), data: { turbo_method: 'delete'}, class: "btn btn-outline-danger btn-sm" %>
@@ -81,6 +80,17 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-</script>
+      document.addEventListener("DOMContentLoaded", () => {
+        test.addEventListener("click", (e) => {
+          e.preventDefault()
+          console.log("name")
+          if (modal.classList.contains("modal")) {
+            modal.classList.remove("modal")
+          } else {
+            modal.classList.add("modal")
+          }
+        })
+      })
+    </script>
   </body>
 </html>

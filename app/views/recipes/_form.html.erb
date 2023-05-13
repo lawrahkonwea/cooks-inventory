@@ -1,6 +1,6 @@
-<%= form_with(model: recipe) do |form| %>
+<%= form_with(model: recipe, id: "recipe_form") do |form| %>
   <% if recipe.errors.any? %>
-    <div style="color: red">
+    <div id="recipe_errors" class="error_message">
       <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
       <ul>
@@ -11,29 +11,29 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form_group">
+    <%= form.label :title, style: "display: block", class: "form_label" %>
+    <%= form.text_field :title, id: "recipe_title", class: "form_control" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="form_group">
+    <%= form.label :description, style: "display: block", class: "form_label" %>
+    <%= form.text_area :description, id: "recipe_description", class: "form_control" %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id, value: current_user.id, readonly: true %>
+  <div class="form_group">
+    <%= form.label :user_id, style: "display: block", class: "form_label" %>
+    <%= form.text_field :user_id, value: current_user.id, readonly: true, id: "recipe_user_id", class: "form_control" %>
   </div>
 
-  <div>
-    <%= form.label :public_recipe, style: "display: block" do %>
+  <div class="form_group">
+    <%= form.label :public_recipe, style: "display: block", class: "form_label" do %>
       Public recipe:
-      <%= form.check_box :public_recipe %>
+      <%= form.check_box :public_recipe, id: "recipe_public_recipe", class: "form_check_input" %>
     <% end %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form_group">
+    <%= form.submit "Save Recipe", class: "btn btn_primary" %>
   </div>
 <% end %>
