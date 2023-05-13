@@ -4,9 +4,10 @@
   <td class="recipe_food_total_price"><%= recipe_food.food.price * recipe_food.quantity %></td>
   <% if recipe_food.recipe.user == current_user %>
     <td class="recipe_food_remove">
-      <div class="recipe_food_remove_container">
-        <%= link_to "Remove", recipe_recipe_food_path(recipe_food.recipe_id, recipe_food.id), data: { "turbo_method": :delete }, class: "recipe_food_remove_link" %>
-      </div>
+    <div>
+    <%= link_to "Modify", edit_recipe_path(@recipe), class: "Modify" %>
+    <%= link_to "Remove", recipe_recipe_food_path(recipe_food.recipe_id, recipe_food.id), data: { "turbo_method": :delete }, class: "recipe_food_remove_link" %>
+  </div>
     </td>
   <% end %>
 </tr>

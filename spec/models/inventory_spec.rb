@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Inventory, type: :model do
-  
   subject do
     Inventory.new(name: 'My First Inventory', user_id: 1)
   end

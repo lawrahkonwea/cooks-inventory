@@ -1,4 +1,4 @@
-<div class="form-container">
+<div class="form-container inventory-food">
   <h1 class="form-header">New Ingredient</h1>
   <%= form_with model: @recipe_food, url: recipe_recipe_foods_path(@recipe.id), local: true, html: { "data-turbo": "false" } do |form| %>
     <% if @recipe_food.errors.any? %>

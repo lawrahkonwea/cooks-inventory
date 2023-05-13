@@ -15,7 +15,7 @@
     <%= render partial: 'recipe2', locals: { recipe: @recipe } %>
     <div id="recipe_buttons" class="recipe_buttons">
       <% if user_signed_in? %>
-        <button type="button" id="open_button" class="open_button">Generate Shopping List</button>
+        <button type="" class="open_button">Generate Shopping List</button>
       <% end %>
     
       <% if @recipe.user == @current_user %>
@@ -41,31 +41,42 @@
       </tbody>
     </table>
 
-    <div class="recipe_links">
-      <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "edit_recipe_link" %> |
-      <%= link_to "Back to recipes", recipes_path, class: "back_to_recipes_link" %>
+</div>
 
-      <% if @recipe.user == current_user %>
-        <%= link_to 'Remove', (@recipe), data: { turbo_method: 'delete'}, class: "btn btn-outline-danger btn-sm" %>
-      <% end %>
+  <% if user_signed_in? %>
+    <div class="modal" id="modal">
+ <%= form_with url: shopping_list_path, method: :get, local: true, html: { "data-turbo": "false", class: "modal-form" } do |form| %>
+    <div class="form-containers shopping-list">
+      <h1 class="form-header">Generating Shopping List</h1>
+      <div class="form-group">
+        <h3>Choose an inventory to use</h3>
+        <%= form.text_field :recipe_id, value: @recipe.id, class: "form-input", type: "hidden" %>
+      </div>
+      <div class="form-group">
+        <%= form.select :inventory_id, options_from_collection_for_select(@inventories, "id", "name"), { prompt: "Select inventory" }, { class: "form-input" } %>
+      </div>
+      <%= form.submit "Submit", class: "form-submit" %>
     </div>
-    </div>
-    </section>
-    <script>
-      const test = document.querySelector("#open_button")
-      const modal = document.querySelector(".modal")
+  <% end %>
+</div>
+  <% end %>
+</div> 
 
-      document.addEventListener("DOMContentLoaded", () => {
-        test.addEventListener("click", (e) => {
-          e.preventDefault()
-          console.log("name")
-          if (modal.classList.contains("modal")) {
-            modal.classList.remove("modal")
-          } else {
-            modal.classList.add("modal")
-          }
-        })
-      })
+<script>
+ const test = document.querySelector(".open_button")
+const modal = document.querySelector(".modal")
+document.addEventListener("DOMContentLoaded", () => {
+    test.addEventListener("click", (e) => {
+      e.preventDefault()
+      console.log("name")
+      if (modal.classList.contains("modal")) {
+        modal.classList.remove("modal")
+      } else {
+        modal.classList.add("modal")
+      }
+    })
+  })
+
     </script>
   </body>
 </html>

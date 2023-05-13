@@ -1,12 +1,22 @@
-<div class="container">
-
-<%= form_with model: @inventory, url: inventories_path, method: :post, local: true, scope: :inventory do |form| %>
-  <h1 class="">Add Inventory</h1>
-  <div>
-    <div>
-      <%= form.text_field :name, placeholder: 'Name', class: ""  %>
+<div class="form-container">
+<div class="new-container">
+  <%= form_with model: @inventory, url: inventories_path, method: :post, local: true, scope: :inventory do |form| %>
+    <h1 class="form-title">Add Inventory</h1>
+    <% if @inventory.errors.any? %>
+      <div class="form-errors">
+        <ul>
+          <% @inventory.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= form.text_field :name, placeholder: 'Name', class: "form-input"  %>
     </div>
-      <%= form.submit "Add Inventory", class: "" %>
-  </div>
-<% end %>
+    <div class="form-group">
+      <%= form.submit "Add Inventory", class: "form-submit" %>
+    </div>
+  <% end %>
+</div>
 </div>

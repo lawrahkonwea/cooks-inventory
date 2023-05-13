@@ -4,8 +4,8 @@
       <%= @inventory.name %>
     </h1>
     <%=
-      link_to "Add food", new_food_path(@inventory.id),
-      class: "add-food"
+      link_to "Add food", inventory_foods_new_path(@inventory.id),
+      class: "add-food-button"
     %>
   </header>
   <div class="table-container">
@@ -24,12 +24,12 @@
               <%= item.food.name %>
             </td>
             <td>
-              <%= "#{item.quantity} #{item.food.measurement}" %>
+              <%= "#{item.quantity} #{item.food.measurement_unit}" %>
             </td>
             <td>
               <%=
                 button_to "Delete", inventory_food_path(@inventory.id, item.id), method: :delete,
-                class: "delete-button"
+                class: "delete-food-button"
               %>
             </td>
           </tr>

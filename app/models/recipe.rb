@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
   def self.public_recipes
     where(public_recipe: true)
   end
+
   def all_food_items
     recipe_foods.select(:food_id).distinct.count
   end
