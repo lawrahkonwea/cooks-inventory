@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find_by_id(params[:id])
     @recipe_foods = @recipe.recipe_foods.includes(:food)
     @current_user = current_user
+    @inventories = current_user.inventories
   end
 
   # GET /recipes/new

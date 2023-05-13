@@ -4,7 +4,7 @@
       <%= @inventory.name %>
     </h1>
     <%=
-      link_to "Add food", new_food_path(@inventory.id),
+      link_to "Add food", inventory_foods_new_path(@inventory.id),
       class: "add-food"
     %>
   </header>
@@ -24,7 +24,7 @@
               <%= item.food.name %>
             </td>
             <td>
-              <%= "#{item.quantity} #{item.food.measurement}" %>
+              <%= "#{item.quantity} #{item.food.measurement_unit}" %>
             </td>
             <td>
               <%=
