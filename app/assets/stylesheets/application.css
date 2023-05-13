@@ -73,7 +73,13 @@
 }
 
 .remove {
-  width: 40%;
+  width: 60%;
+  font-size: 150%;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 1%;
+  background-color: gray;
 }
 
 .remove a {
@@ -284,4 +290,8 @@ ul {
   background-color: rgb(189, 189, 189);
   border-radius: 8px;
   margin: 5%;
+}
+
+.Modify {
+
 }

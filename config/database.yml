@@ -34,14 +34,14 @@ development:
   database: Cooks_Corner_development
   host: localhost
   username: "postgres"
-  password: "October1996"
+  password: "5432"
 
 test:
   <<: *default
   database: Cooks_Corner_test
   host: localhost
   username: "postgres"
-  password: "October1996"
+  password: "5432"
 
 production:
   <<: *default

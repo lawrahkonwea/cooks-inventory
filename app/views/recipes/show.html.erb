@@ -42,12 +42,7 @@
     </table>
 
     <div class="recipe_links">
-      <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "edit_recipe_link" %> |
       <%= link_to "Back to recipes", recipes_path, class: "back_to_recipes_link" %>
-
-      <% if @recipe.user == current_user %>
-        <%= link_to 'Remove', (@recipe), data: { turbo_method: 'delete'}, class: "btn btn-outline-danger btn-sm" %>
-      <% end %>
     </div>
     </div>
     </section>
